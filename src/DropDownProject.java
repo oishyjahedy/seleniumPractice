@@ -14,14 +14,17 @@ public class DropDownProject {
 System.setProperty("webdriver.chrome.driver", "E:\\QA\\Udemy_selenium_course\\chromedriver.exe");
 		
 		WebDriver driver=new ChromeDriver();
-		driver.get("http://www.newtours.demoaut.com/");
+		driver.get("https://www.biman-airlines.com/");
 		driver.manage().window().maximize();
-		driver.findElement(By.xpath("//a[contains(text(),'REGISTER')]")).click();
+		
 //		driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
-		Select s= new Select(driver.findElement(By.xpath("//select[@name='country']")));
+		Select s= new Select(driver.findElement(By.xpath("//select[@class='empty']")));
 		System.out.println("After Wait");
-		s.selectByValue("3");
-		s.selectByVisibleText("ALGERIA");
+		s.selectByValue("BZL");
+		s.selectByVisibleText("Barisal (BZL)");
+	//	 s.findElement(By.xpath("//select[@name='AC']")));
+		Select r= new Select(driver.findElement(By.xpath("//select[@name='AC']")));
+		r.selectByValue("CGP");
 		
 		
 		
